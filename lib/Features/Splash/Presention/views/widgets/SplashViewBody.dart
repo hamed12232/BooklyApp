@@ -1,4 +1,5 @@
 import 'package:bookly_app/Core/Utils/AssetsData.dart';
+import 'package:bookly_app/Features/Splash/Presention/views/widgets/SlidingText.dart';
 import 'package:flutter/material.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -24,6 +25,12 @@ class _SplashViewBodyState extends State<SplashViewBody>
   }
 
   @override
+  void dispose() {
+    super.dispose();
+    animationController.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -32,16 +39,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
         Image.asset(
           AssetsData.logo,
         ),
-        AnimatedBuilder(
-          animation: slidingAnimation,
-          builder: (context, _) => SlideTransition(
-            position: slidingAnimation,
-            child: Text(
-              "Read Books",
-              textAlign: TextAlign.center,
-            ),
-          ),
-        )
+        SlidingText(slidingAnimation: slidingAnimation)
       ],
     );
   }
