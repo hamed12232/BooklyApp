@@ -1,6 +1,10 @@
+import 'package:bookly_app/Constants.dart';
 import 'package:bookly_app/Core/Utils/AssetsData.dart';
 import 'package:bookly_app/Features/Splash/Presention/views/widgets/SlidingText.dart';
+import 'package:bookly_app/Features/home/presention/views/home_View.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -16,6 +20,20 @@ class _SplashViewBodyState extends State<SplashViewBody>
   @override
   void initState() {
     super.initState();
+    initSlidingAnimation();
+    NavigateToHome();
+    //to achive single responsibility princibiles
+  }
+
+  // ignore: non_constant_identifier_names
+  void NavigateToHome() {
+    Future.delayed(const Duration(seconds: 2), () {
+      Get.to(HomeView(),
+          transition: Transition.fade, duration: kTransitionDuration);
+    });
+  }
+
+  void initSlidingAnimation() {
     animationController =
         AnimationController(vsync: this, duration: Duration(seconds: 1));
 
