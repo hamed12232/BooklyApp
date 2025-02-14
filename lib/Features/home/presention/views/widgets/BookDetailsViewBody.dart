@@ -46,17 +46,19 @@ class BookDetailsViewBody extends StatelessWidget {
           height: 30,
         ),
         Booksbuttonaction(),
-         SizedBox(
+        SizedBox(
           height: 30,
         ),
         Padding(
           padding: const EdgeInsets.all(12.0),
-          child: Align
-          (
-            alignment: Alignment.topLeft,
-            child: Text("You Can also like",style: Styles.textStyle18,)),
+          child: Align(
+              alignment: Alignment.topLeft,
+              child: Text(
+                "You Can also like",
+                style: Styles.textStyle18,
+              )),
         ),
-         SizedBox(
+        SizedBox(
           height: 5,
         ),
         Padding(

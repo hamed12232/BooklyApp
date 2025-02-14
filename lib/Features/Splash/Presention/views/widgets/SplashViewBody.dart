@@ -26,8 +26,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
   // ignore: non_constant_identifier_names
   void NavigateToHome() {
     Future.delayed(const Duration(seconds: 2), () {
-    
-    GoRouter.of(context).push(AppRouter.kHomeView);
+      GoRouter.of(context).push(AppRouter.kHomeView);
     });
   }
 

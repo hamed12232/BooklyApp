@@ -2,8 +2,8 @@ import 'package:bookly_app/Core/Utils/AssetsData.dart';
 import 'package:flutter/material.dart';
 
 class CustomListViewItem extends StatelessWidget {
-   CustomListViewItem( {required this.w,super.key});
-   double w;
+  CustomListViewItem({required this.w, super.key});
+  double w;
 
   @override
   Widget build(BuildContext context) {
