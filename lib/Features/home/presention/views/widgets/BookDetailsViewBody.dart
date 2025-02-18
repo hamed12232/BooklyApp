@@ -17,7 +17,8 @@ class BookDetailsViewBody extends StatelessWidget {
         CustomBookDetailsAppBar(),
         CustomListViewItem(
           w: 0.5,
-          imageUrl: "assets/images/test.jpeg",
+          imageUrl:
+              "https://th.bing.com/th/id/OIP.hUaCDuWAqM2zqcHr0RpNqgHaE8?w=255&h=180&c=7&r=0&o=5&pid=1.7",
         ),
         SizedBox(
           height: 40,
