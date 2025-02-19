@@ -45,7 +45,7 @@ class BestSellerListViewItem extends StatelessWidget {
                     height: 4,
                   ),
                   Text(
-                    bookModel.volumeInfo.authors!.join(", "),
+                    bookModel.volumeInfo.authors![0],
                     style: Styles.textStyle14,
                     maxLines: 1,
                   ),

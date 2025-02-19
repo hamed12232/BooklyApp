@@ -10,6 +10,7 @@ class Homeviewbody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
+      scrollDirection: Axis.vertical,
       physics: const BouncingScrollPhysics(),
       slivers: [
         SliverToBoxAdapter(
@@ -31,8 +32,9 @@ class Homeviewbody extends StatelessWidget {
             ),
           ),
         ),
-        SliverFillRemaining(
-          child: BestSellerListView(),
+        SliverPadding(
+          padding: const EdgeInsets.symmetric(horizontal: 15.0),
+          sliver: BestSellerListView(),
         )
       ],
     );
