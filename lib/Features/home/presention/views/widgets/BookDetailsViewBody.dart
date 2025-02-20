@@ -1,4 +1,5 @@
 import 'package:bookly_app/Core/Utils/Styles.dart';
+import 'package:bookly_app/Features/home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/Features/home/presention/views/widgets/BooksButtonAction.dart';
 import 'package:bookly_app/Features/home/presention/views/widgets/CustomBookDetailsAppBar.dart';
 import 'package:bookly_app/Features/home/presention/views/widgets/CustomListViewItem.dart';
@@ -7,7 +8,8 @@ import 'package:bookly_app/Features/home/presention/views/widgets/SimilarBooksLi
 import 'package:flutter/material.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
-  const BookDetailsViewBody({super.key});
+  const BookDetailsViewBody({super.key, required this.bookModel});
+  final BookModel bookModel;
 
   @override
   Widget build(BuildContext context) {
@@ -17,15 +19,15 @@ class BookDetailsViewBody extends StatelessWidget {
         CustomBookDetailsAppBar(),
         CustomListViewItem(
           w: 0.5,
-          imageUrl:
-              "https://th.bing.com/th/id/OIP.hUaCDuWAqM2zqcHr0RpNqgHaE8?w=255&h=180&c=7&r=0&o=5&pid=1.7",
+          imageUrl: bookModel.volumeInfo.imageLinks.thumbnail,
         ),
         SizedBox(
           height: 40,
         ),
         Text(
-          "The Jungle Book",
+          bookModel.volumeInfo.title!,
           style: Styles.textStyle30.copyWith(fontWeight: FontWeight.bold),
+          textAlign: TextAlign.center,
         ),
         SizedBox(
           height: 6,
@@ -33,7 +35,7 @@ class BookDetailsViewBody extends StatelessWidget {
         Opacity(
           opacity: 0.7,
           child: Text(
-            "Rudyord Klipling",
+            bookModel.volumeInfo.authors![0],
             style: Styles.textStyle18.copyWith(
                 fontStyle: FontStyle.italic, fontWeight: FontWeight.w500),
           ),

@@ -21,7 +21,7 @@ class Booksbuttonaction extends StatelessWidget {
             ),
             child: Center(
                 child: Text(
-              "19.99\$",
+              "Free",
               style: Styles.textStyle16
                   .copyWith(color: Colors.black, fontWeight: FontWeight.bold),
             ))),
@@ -37,7 +37,7 @@ class Booksbuttonaction extends StatelessWidget {
             ),
             child: Center(
                 child: Text(
-              "Free preview",
+              "preview",
               style: Styles.textStyle14
                   .copyWith(color: Colors.white, fontWeight: FontWeight.bold),
             )))

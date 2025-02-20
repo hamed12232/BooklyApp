@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class Similarbookslistview extends StatelessWidget {
-  const Similarbookslistview({super.key});
+  const Similarbookslistview({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +20,7 @@ class Similarbookslistview extends StatelessWidget {
         return SizedBox(
           height: MediaQuery.of(context).size.height * 0.17,
           child: ListView.builder(
+              itemCount: state.books.length,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
                 return Padding(
@@ -25,7 +28,7 @@ class Similarbookslistview extends StatelessWidget {
                   child: CustomListViewItem(
                       w: 0.2,
                       imageUrl:
-                          "https://th.bing.com/th/id/OIP.hUaCDuWAqM2zqcHr0RpNqgHaE8?w=255&h=180&c=7&r=0&o=5&pid=1.7"),
+                          state.books[index].volumeInfo.imageLinks.thumbnail),
                 );
               }),
         );
